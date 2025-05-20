@@ -1,0 +1,1336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Lagaan Project</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            margin: 40px;
+            background: #f9f9f9;
+        }
+        .header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 40px;
+        }
+        .header img {
+            width: 64px;
+            height: 64px;
+            margin-right: 20px;
+            object-fit: contain;
+            border-radius: 0;
+            background: none;
+            box-shadow: none;
+        }
+        h1 {
+            margin: 0;
+        }
+        .section {
+            background: #fff;
+            padding: 24px;
+            margin-bottom: 32px;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .section-title {
+            margin-top: 0;
+        }
+        .images-row {
+            display: flex;
+            gap: 24px;
+            margin-top: 16px;
+        }
+        .image-block {
+            flex: 1;
+            text-align: center;
+        }
+        /* Resize all images in image-blocks except for the header */
+        .image-block img {
+            width: 100%;
+            height: 220px;      /* Increased height */
+            max-width: 100%;    /* Remove max-width: 150px */
+            object-fit: cover;  /* Fill the box, cropping if needed */
+            border-radius: 6px;
+            background: #eee;
+            display: block;
+        }
+        .desc {
+            margin-top: 8px;
+            color: #555;
+            font-size: 0.95em;
+        }
+        /* Add this style for fullscreen image overlay */
+        .fullscreen-img-overlay {
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            background: rgba(0,0,0,0.92);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 2000;
+            cursor: zoom-out;
+        }
+        .fullscreen-img-overlay img {
+            max-width: 96vw;
+            max-height: 96vh;
+            border-radius: 10px;
+            box-shadow: 0 4px 32px rgba(0,0,0,0.5);
+            background: #fff;
+            cursor: zoom-out;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c0/Flag_of_the_British_East_India_Company_%281801%29.svg/250px-Flag_of_the_British_East_India_Company_%281801%29.svg.png" alt="British East India Company Flag">
+        <h1>Lagaan Project: Economies of Colonialism: Analyze how the British East India Company's demand for lagaan (tax) exemplifies the economic exploitation inherent in British imperialism. (India Focus)</h1>
+    </div>
+
+    <!-- Name input section (moved to top) -->
+    <div id="user-name-bar" style="max-width:500px; margin:0 auto 24px auto; display:flex; align-items:center; gap:12px;">
+        <input id="global-user-name" type="text" placeholder="Enter your name to participate" style="padding:8px; border-radius:4px; border:1px solid #ccc; width:60%;">
+        <button id="set-user-name-btn" style="padding:8px 16px; border-radius:4px; border:none; background:#1976d2; color:#fff; cursor:pointer;">Set Name</button>
+        <span id="user-name-display" style="margin-left:12px; color:#1976d2; font-weight:bold; display:none;"></span>
+    </div>
+
+    <!-- Section 1 -->
+    <div class="section">
+        <h2 class="section-title">History: The British East India Company</h2>
+        <!-- Insert Document 1 content here -->
+         <p>In 1600, the Queen of England responded favourably to a petition by George, Earl of Cumberland and 218 others to form the British East India Company (BEIC). For a period of fifteen years, the charter awarded the company a monopoly on English trade with all countries east of the Cape of Good Hope and west of the Straits of Magellan. Any traders there without a license from the company were liable to forfeiture of their ships and cargo (half of which would go to the Crown and half to the company), as well as imprisonment at the "royal pleasure".  This privileged position granted to the BEIC clearly set them up to exploit economically all regions in India  where the natives and trademen wished to sell their wares. In 1609, James I renewed the East India Company's charter for an indefinite period, with the proviso that its privileges would be annulled if trade was unprofitable for three consecutive years.</p>
+        <!-- Example: <p>Paste your document 1 text or HTML here.</p> -->
+
+        <div class="images-row">
+            <div class="image-block">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/df/Jameslancaster.jpg/330px-Jameslancaster.jpg" alt="James Lancaster">
+                <div class="desc">James Lancaster, the first commander of the British East India Company.</div>
+            </div>
+            <div class="image-block">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d8/Reddragonship.jpg/250px-Reddragonship.jpg" alt="Red Dragon">
+                <div class="desc">The Red Dragon, the first ship of the British East India Company to reach India.</div>
+            </div>
+            <div class="image-block">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/8/87/Jahangir_investing_a_courtier_with_a_robe_of_honour_watched_by_Sir_Thomas_Roe%2C_English_ambassador_to_the_court_of_Jahangir_at_Agra_from_1615-18%2C_and_others.jpg/330px-Jahangir_investing_a_courtier_with_a_robe_of_honour_watched_by_Sir_Thomas_Roe%2C_English_ambassador_to_the_court_of_Jahangir_at_Agra_from_1615-18%2C_and_others.jpg" alt="Jahangir and Roe">
+                <div class="desc">Jahangir investing a courtier with a robe of honour, watched by Sir Thomas Roe, English ambassador to the court of Jahangir at Agra from 1615-18.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 2 -->
+    <div class="section">
+        <h2 class="section-title">Lagaan (Tax): How It Decimated the Indian Economy</h2>
+        <!-- Insert Document 2 content here -->
+         <p>One of the ways that the British East India Company ravaged the Indian economy was the  demand for lagaan (tax) in India; this tax exemplifies the economic exploitation system of land revenue that was introduced. This system, along with other colonial policies, resulted in excessive taxation, economic dependency, and the destruction of local industries, all to benefit British interests. Specifically, The East India Company, and later the British government, imposed high land taxes (lagaan) on Indian peasants, often exceeding their capacity to pay. Land revenue demands were frequently fixed and time-bound, forcing peasants to borrow money to meet them, even in years of poor harvests.</p>
+        <!-- Example: <p>Paste your document 2 text or HTML here.</p> -->
+
+        <div class="images-row">
+            <div class="image-block">
+                <img src="https://upload.wikimedia.org/wikipedia/en/b/b6/Lagaan.jpg" alt="Lagaan Movie Poster">
+                <div class="desc">Lagaan Movie Poster</div>
+            </div>
+            <div class="image-block">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4e/India_1862_One_Mohur.jpg/250px-India_1862_One_Mohur.jpg" alt="One Mohur">
+                <div class="desc">One Mohur, a currency used during the British Raj in India.</div>
+            </div>
+            <div class="image-block">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/4/4f/Bengal_famine_1943_photo.jpg/250px-Bengal_famine_1943_photo.jpg" alt="Bengal Famine 1943">
+                <div class="desc">Bengal Famine 1943, a result of British policies in India.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 3 -->
+    <div class="section">
+        <h2 class="section-title">Lagaan (Tax): Benefitted British Imperialism</h2>
+        <!-- Insert Document 3 content here -->
+         <p>The East India Company's policies also aimed to promote British goods over Indian-made products, leading to the decline of traditional industries like textiles and crafts. The colonial policies eventually transformed India into a raw material supplier and a market for British goods, creating an economic dependency on Britain and creating impoverishment throughout India. Specifically, excessive taxation forced many peasants to take loans from moneylenders at exorbitant interest rates, leading to further impoverishment and land loss.</p>
+        <!-- Example: <p>Paste your document 3 text or HTML here.</p> -->
+
+        <div class="images-row">
+            <div class="image-block">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/5/59/IndianRailways1871b.jpg/250px-IndianRailways1871b.jpg" alt="Indian Railways">
+                <div class="desc">Indian Railways, a major infrastructure project funded by lagaan.</div>
+            </div>
+            <div class="image-block">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/dc/India_railways1909a.jpg/250px-India_railways1909a.jpg" alt="Indian Railways 1909">
+                <div class="desc">Indian Railways in 1909, showcasing British engineering.</div>
+            </div>
+            <div class="image-block">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f4/Victoriaterminus1903.JPG/250px-Victoriaterminus1903.JPG" alt="Victoria Terminus">
+                <div class="desc">Victoria Terminus, a symbol of British architecture in India.</div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 4: Interactive Timelines & Maps -->
+    <div class="section">
+        <h2 class="section-title">Interactive Timelines & Maps</h2>
+        <p>Explore key events and locations related to the British East India Company and lagaan policies. Click on timeline events or map markers to learn more.</p>
+        <div style="display: flex; flex-wrap: wrap; gap: 32px;">
+            <!-- Timeline -->
+            <div style="flex: 2; min-width: 300px;">
+                <h3 style="margin-top:0;">Timeline of Major Events</h3>
+                <ul id="timeline" style="list-style:none; padding:0;">
+                    <li style="margin-bottom:16px;">
+                        <button onclick="showEvent('1600')"
+                            style="background:#e3eaff; border:none; border-radius:4px; padding:8px 12px; cursor:pointer;">
+                            1600: British East India Company Founded
+                        </button>
+                        <div id="event-1600" style="display:none; margin-top:8px; color:#444;">
+                            The British East India Company is granted a royal charter, beginning its trade monopoly in India.
+                        </div>
+                    </li>
+                    <li style="margin-bottom:16px;">
+                        <button onclick="showEvent('1765')"
+                            style="background:#e3eaff; border:none; border-radius:4px; padding:8px 12px; cursor:pointer;">
+                            1765: Company Gains Taxation Rights
+                        </button>
+                        <div id="event-1765" style="display:none; margin-top:8px; color:#444;">
+                            The Company receives the right to collect lagaan (tax) in Bengal, marking the start of large-scale economic exploitation.
+                        </div>
+                    </li>
+                    <li style="margin-bottom:16px;">
+                        <button onclick="showEvent('1857')"
+                            style="background:#e3eaff; border:none; border-radius:4px; padding:8px 12px; cursor:pointer;">
+                            1857: Indian Rebellion
+                        </button>
+                        <div id="event-1857" style="display:none; margin-top:8px; color:#444;">
+                            The Indian Rebellion leads to the end of Company rule and the beginning of direct British governance.
+                        </div>
+                    </li>
+                    <li style="margin-bottom:16px;">
+                        <button onclick="showEvent('1943')"
+                            style="background:#e3eaff; border:none; border-radius:4px; padding:8px 12px; cursor:pointer;">
+                            1943: Bengal Famine
+                        </button>
+                        <div id="event-1943" style="display:none; margin-top:8px; color:#444;">
+                            The Bengal Famine, exacerbated by colonial policies, results in millions of deaths.
+                        </div>
+                    </li>
+                    <li>
+                        <button onclick="showEvent('1947')"
+                            style="background:#e3eaff; border:none; border-radius:4px; padding:8px 12px; cursor:pointer;">
+                            1947: Indian Independence
+                        </button>
+                        <div id="event-1947" style="display:none; margin-top:8px; color:#444;">
+                            India gains independence from British rule, ending the era of lagaan and colonial exploitation.
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- Map (Static with Markers) -->
+            <div style="flex: 3; min-width: 320px;">
+                <h3 style="margin-top:0;">Map of Key Locations</h3>
+                <div style="position:relative; width:100%; max-width:400px; height:260px; background:#e6e6e6; border-radius:8px; overflow:hidden; margin:auto;">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/7/74/India-map-en.svg/1519px-India-map-en.svg.png"
+                        alt="India Map"
+                        style="width:100%; height:100%; object-fit:contain; display:block;">
+                    <!-- Bengal Marker (Kolkata area, East India) -->
+                    <div title="Bengal (1765, 1943)" style="position:absolute; left:265px; top:85px;">
+                        <span onclick="showMapEvent('bengal')" style="cursor:pointer; font-size:28px; color:#d32f2f;">&#x1F4CD;</span>
+                    </div>
+                    <!-- Mumbai Marker (West coast, Maharashtra) -->
+                    <div title="Mumbai (Victoria Terminus)" style="position:absolute; left:110px; top:120px;">
+                        <span onclick="showMapEvent('mumbai')" style="cursor:pointer; font-size:28px; color:#1976d2;">&#x1F4CD;</span>
+                    </div>
+                    <!-- Delhi Marker (North India) -->
+                    <div title="Delhi (Company HQ)" style="position:absolute; left:170px; top:70px;">
+                        <span onclick="showMapEvent('delhi')" style="cursor:pointer; font-size:28px; color:#388e3c;">&#x1F4CD;</span>
+                    </div>
+                </div>
+                <div id="map-event-info" style="margin-top:12px; color:#444;"></div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Section 5: Document Annotation (moved here) -->
+    <div class="section">
+        <h2 class="section-title">Document Annotation</h2>
+        <p>Highlight any part of the documents above to add your own annotation or comment. Click "Add Annotation" to save your note. Your annotations will appear below.</p>
+        <div style="margin-bottom:16px;">
+            <textarea id="annotation-text" rows="3" style="width:100%; max-width:600px; border-radius:6px; border:1px solid #ccc; padding:8px;" placeholder="Highlight text above, then add your annotation here..."></textarea>
+            <br>
+            <button onclick="addAnnotation()" style="margin-top:8px; padding:8px 16px; border-radius:4px; border:none; background:#388e3c; color:#fff; cursor:pointer;">Add Annotation</button>
+        </div>
+        <div id="annotations-list" style="margin-top:20px;">
+            <h4 style="margin-bottom:8px;">Your Annotations:</h4>
+            <ul id="annotations-ul" style="padding-left:18px;"></ul>
+        </div>
+    </div>
+
+    <!-- Section 6: Gamified Learning Modules -->
+    <div class="section">
+        <h2 class="section-title" style="display:flex; align-items:center; justify-content:space-between;">
+            Gamified Learning Modules
+            <button id="start-quiz-btn" style="margin-left:24px; padding:10px 24px; font-size:1em; border-radius:6px; border:none; background:#388e3c; color:#fff; cursor:pointer;">Start Quiz</button>
+        </h2>
+        <p>Test your knowledge and challenge yourself with interactive quizzes about the British East India Company and lagaan policies. Earn points for each correct answer!</p>
+        <!-- Timer and Start Overlay -->
+        <div id="quiz-timer-container" style="display:flex; align-items:center; justify-content:center; margin-bottom:18px;">
+            <span id="quiz-timer" style="font-size:1.2em; font-weight:bold; color:#d32f2f; margin-right:16px;">55:00</span>
+            <button id="reset-timer-btn" style="padding:6px 14px; border-radius:4px; border:none; background:#1976d2; color:#fff; cursor:pointer;">Reset Timer</button>
+        </div>
+        <!-- Overlay (add a close button in the top right corner) -->
+        <div id="quiz-start-overlay" style="position:fixed; top:0; left:0; width:100vw; height:100vh; background:rgba(255,255,255,0.98); z-index:1000; display:none; flex-direction:column; align-items:center; justify-content:center;">
+            <button id="quiz-overlay-close-btn" title="Close" style="position:absolute; top:24px; right:32px; background:none; border:none; font-size:2em; color:#888; cursor:pointer; z-index:1100;">&times;</button>
+            <h2 style="margin-bottom:16px;">Lagaan Quiz Challenge</h2>
+            <p style="max-width:400px; text-align:center; margin-bottom:24px;">Test your knowledge about the British East India Company, lagaan, and Indian colonial history. You have 55 minutes to answer all questions. Good luck!</p>
+            <button id="quiz-overlay-start-btn" style="padding:14px 32px; font-size:1.2em; border-radius:6px; border:none; background:#388e3c; color:#fff; cursor:pointer;">Begin</button>
+        </div>
+
+        <div id="quiz-module" style="max-width:500px; margin:auto;">
+            <div id="quiz-question" style="font-weight:bold; margin-bottom:12px;"></div>
+            <div id="quiz-options"></div>
+            <div id="quiz-feedback" style="margin-top:12px; font-weight:bold;"></div>
+            <div id="quiz-score" style="margin-top:16px; color:#1976d2;"></div>
+            <button id="quiz-next" style="margin-top:16px; display:none; padding:8px 16px; border-radius:4px; border:none; background:#1976d2; color:#fff; cursor:pointer;">Next Question</button>
+        </div>
+        <div id="leaderboard-section" style="max-width:500px; margin:32px auto 0 auto;">
+            <h3 style="margin-bottom:8px;">Leaderboard</h3>
+            <form id="leaderboard-form" style="margin-bottom:12px; display:none;">
+                <input id="leaderboard-name" type="text" placeholder="Enter your name" style="padding:6px; border-radius:4px; border:1px solid #ccc; width:60%;">
+                <button type="submit" style="padding:6px 14px; border-radius:4px; border:none; background:#388e3c; color:#fff; cursor:pointer;">Submit Score</button>
+            </form>
+            <ul id="leaderboard-list" style="padding-left:18px; background:#f5f5f5; border-radius:6px; min-height:40px;"></ul>
+        </div>
+    </div>
+    <script>
+        function showEvent(year) {
+            // Hide all event details
+            ['1600','1765','1857','1943','1947'].forEach(function(y) {
+                document.getElementById('event-' + y).style.display = 'none';
+            });
+            // Show selected event
+            document.getElementById('event-' + year).style.display = 'block';
+        }
+        function showMapEvent(place) {
+            var info = {
+                bengal: "<strong>Bengal:</strong> Site of major Company operations, the 1765 taxation rights, and the 1943 famine.",
+                mumbai: "<strong>Mumbai:</strong> Home to Victoria Terminus, a symbol of British infrastructure.",
+                delhi: "<strong>Delhi:</strong> Headquarters for British administration and Company activities."
+            };
+            document.getElementById('map-event-info').innerHTML = info[place] || "";
+        }
+    </script>
+    <script>
+const quizData = [
+    // --- Initial 10 questions ---
+    {
+        question: "What year was the British East India Company founded?",
+        options: ["1600", "1757", "1857", "1947"],
+        answer: 0
+    },
+    {
+        question: "What was 'lagaan'?",
+        options: ["A type of crop", "A tax on land", "A British official", "A railway project"],
+        answer: 1
+    },
+    {
+        question: "Which event ended Company rule in India?",
+        options: ["Battle of Plassey", "Indian Rebellion of 1857", "Bengal Famine", "Indian Independence"],
+        answer: 1
+    },
+    {
+        question: "Which city is associated with Victoria Terminus?",
+        options: ["Delhi", "Kolkata", "Mumbai", "Chennai"],
+        answer: 2
+    },
+    {
+        question: "What was a major consequence of excessive lagaan (tax) on Indian peasants?",
+        options: [
+            "Increased wealth for peasants",
+            "Peasants took loans at high interest and lost land",
+            "Growth of Indian industries",
+            "Lower British profits"
+        ],
+        answer: 1
+    },
+    {
+        question: "Which traditional Indian industry declined due to British policies?",
+        options: [
+            "Textiles and crafts",
+            "Shipbuilding",
+            "Steel production",
+            "Film industry"
+        ],
+        answer: 0
+    },
+    {
+        question: "What major infrastructure project was funded by lagaan?",
+        options: [
+            "Indian Railways",
+            "Taj Mahal",
+            "Delhi Metro",
+            "Golden Temple"
+        ],
+        answer: 0
+    },
+    {
+        question: "The Bengal Famine of 1943 was a result of:",
+        options: [
+            "Natural disasters only",
+            "British colonial policies",
+            "Industrial revolution",
+            "Indian independence movement"
+        ],
+        answer: 1
+    },
+    {
+        question: "What did the British East India Company transform India into?",
+        options: [
+            "A global superpower",
+            "A raw material supplier and market for British goods",
+            "A center for European trade",
+            "A self-sufficient economy"
+        ],
+        answer: 1
+    },
+    {
+        question: "Who renewed the East India Company's charter in 1609?",
+        options: [
+            "Queen Victoria",
+            "James I",
+            "George III",
+            "Queen Elizabeth II"
+        ],
+        answer: 1
+    },
+    // --- Next 45 questions ---
+    {
+        question: "If the British East India Company had not imposed lagaan, what might have happened to Indian agriculture?",
+        options: [
+            "It may have remained more prosperous and self-sufficient",
+            "It would have collapsed sooner",
+            "It would have become industrialized",
+            "It would have been abandoned"
+        ],
+        answer: 0
+    },
+    {
+        question: "Which Indian region was most affected by the 1943 famine?",
+        options: [
+            "Punjab",
+            "Bengal",
+            "Maharashtra",
+            "Rajasthan"
+        ],
+        answer: 1
+    },
+    {
+        question: "What was the main export from India to Britain during Company rule?",
+        options: [
+            "Textiles and raw materials",
+            "Cars",
+            "Electronics",
+            "Oil"
+        ],
+        answer: 0
+    },
+    {
+        question: "Who benefited most from the lagaan system?",
+        options: [
+            "Indian peasants",
+            "British officials and Company shareholders",
+            "Indian kings",
+            "Local artisans"
+        ],
+        answer: 1
+    },
+    {
+        question: "Which of these was NOT a result of British colonial policies?",
+        options: [
+            "Destruction of local industries",
+            "Economic dependency",
+            "Rapid Indian industrialization",
+            "Excessive taxation"
+        ],
+        answer: 2
+    },
+    {
+        question: "What was a common response of Indian peasants to high lagaan demands?",
+        options: [
+            "Migration to cities",
+            "Taking loans from moneylenders",
+            "Joining the British army",
+            "Becoming merchants"
+        ],
+        answer: 1
+    },
+    {
+        question: "Which city became a major railway hub under British rule?",
+        options: [
+            "Mumbai",
+            "Hyderabad",
+            "Bangalore",
+            "Jaipur"
+        ],
+        answer: 0
+    },
+    {
+        question: "What was the primary purpose of Indian Railways during the colonial era?",
+        options: [
+            "Transporting British goods and resources",
+            "Tourism",
+            "Religious pilgrimages",
+            "Education"
+        ],
+        answer: 0
+    },
+    {
+        question: "Which British monarch renewed the East India Company's charter for an indefinite period?",
+        options: [
+            "James I",
+            "Queen Victoria",
+            "George V",
+            "Elizabeth I"
+        ],
+        answer: 0
+    },
+    {
+        question: "What would have happened if Indian peasants could not pay lagaan?",
+        options: [
+            "They risked losing their land and being imprisoned",
+            "They received government aid",
+            "They were promoted",
+            "They were given tax breaks"
+        ],
+        answer: 0
+    },
+    {
+        question: "Which of these was a direct effect of the Indian Rebellion of 1857?",
+        options: [
+            "End of Company rule",
+            "Start of World War I",
+            "Formation of the United Nations",
+            "Discovery of oil in India"
+        ],
+        answer: 0
+    },
+    {
+        question: "If the Company had not promoted British goods, what might have happened to Indian crafts?",
+        options: [
+            "They may have continued to flourish",
+            "They would have disappeared anyway",
+            "They would have become British-owned",
+            "They would have been banned"
+        ],
+        answer: 0
+    },
+    {
+        question: "What was the main reason for the British to build railways in India?",
+        options: [
+            "To move troops and resources efficiently",
+            "To help Indian farmers",
+            "To promote tourism",
+            "To connect Indian villages"
+        ],
+        answer: 0
+    },
+    {
+        question: "Which of these is a hypothetical positive outcome if lagaan was lower?",
+        options: [
+            "Less rural poverty",
+            "More British profits",
+            "Fewer Indian crops",
+            "More famines"
+        ],
+        answer: 0
+    },
+    {
+        question: "What did the Company do if trade was unprofitable for three consecutive years?",
+        options: [
+            "Its privileges could be annulled",
+            "It would be rewarded",
+            "It would be nationalized",
+            "It would be merged with the Dutch East India Company"
+        ],
+        answer: 0
+    },
+    {
+        question: "Which of these was a major British export to India?",
+        options: [
+            "Manufactured textiles",
+            "Spices",
+            "Tea",
+            "Rice"
+        ],
+        answer: 0
+    },
+    {
+        question: "What was the fate of many Indian artisans under Company rule?",
+        options: [
+            "Loss of livelihood",
+            "Increased wealth",
+            "Migration to Britain",
+            "Becoming Company officials"
+        ],
+        answer: 0
+    },
+    {
+        question: "If the Company had not received a monopoly, what might have happened?",
+        options: [
+            "Other English traders could have competed in India",
+            "India would have been isolated",
+            "No trade would occur",
+            "The Company would have become a bank"
+        ],
+        answer: 0
+    },
+    {
+        question: "Which of these was a common crop taxed under lagaan?",
+        options: [
+            "Wheat",
+            "Cotton",
+            "Rice",
+            "All of the above"
+        ],
+        answer: 3
+    },
+    {
+        question: "What was the main goal of British economic policies in India?",
+        options: [
+            "Benefit Britain",
+            "Benefit Indian peasants",
+            "Promote Indian independence",
+            "Reduce British profits"
+        ],
+        answer: 0
+    },
+    {
+        question: "Which of these was a result of economic dependency on Britain?",
+        options: [
+            "Decline of Indian industries",
+            "Rise of Indian exports",
+            "Growth of Indian banks",
+            "Increase in British imports"
+        ],
+        answer: 0
+    },
+    {
+        question: "What was the impact of fixed and time-bound revenue demands?",
+        options: [
+            "Peasants had to borrow money even in poor harvests",
+            "Peasants became wealthy",
+            "British taxes decreased",
+            "Indian rulers gained power"
+        ],
+        answer: 0
+    },
+    {
+        question: "If the Bengal Famine had not occurred, what might have been different?",
+        options: [
+            "Millions of lives could have been saved",
+            "British rule would have ended sooner",
+            "India would have become a monarchy",
+            "Railways would not exist"
+        ],
+        answer: 0
+    },
+    {
+        question: "Which of these was a British policy to promote their own goods?",
+        options: [
+            "Discouraging Indian-made products",
+            "Subsidizing Indian crafts",
+            "Eliminating taxes",
+            "Promoting Indian exports"
+        ],
+        answer: 0
+    },
+    {
+        question: "What was the effect of high interest loans on Indian peasants?",
+        options: [
+            "Further impoverishment and land loss",
+            "Increased savings",
+            "More exports",
+            "Higher wages"
+        ],
+        answer: 0
+    },
+    {
+        question: "Which of these was a major infrastructure project during British rule?",
+        options: [
+            "Indian Railways",
+            "Suez Canal",
+            "Great Wall of India",
+            "Panama Canal"
+        ],
+        answer: 0
+    },
+    {
+        question: "If the Company had not been granted a monopoly, what might have happened to Indian trade?",
+        options: [
+            "More competition and possibly better terms for Indians",
+            "No trade at all",
+            "Only Dutch traders in India",
+            "India would have become a British colony sooner"
+        ],
+        answer: 0
+    },
+    {
+        question: "What was the impact of Company rule on Indian textiles?",
+        options: [
+            "Decline due to British imports",
+            "Growth due to new technology",
+            "No change",
+            "Textiles became a British monopoly"
+        ],
+        answer: 0
+    },
+    {
+        question: "Which of these was a direct result of British land revenue policies?",
+        options: [
+            "Peasant indebtedness",
+            "Industrial revolution in India",
+            "Rise of Indian banks",
+            "Decline in British exports"
+        ],
+        answer: 0
+    },
+    {
+        question: "If Indian peasants had more bargaining power, what might have changed?",
+        options: [
+            "Lower taxes and less poverty",
+            "More British profits",
+            "More famines",
+            "Fewer crops"
+        ],
+        answer: 0
+    },
+    {
+        question: "What was the main reason for the decline of Indian crafts?",
+        options: [
+            "Competition from British goods",
+            "Lack of raw materials",
+            "Natural disasters",
+            "Government support"
+        ],
+        answer: 0
+    },
+    {
+        question: "Which of these was a feature of Company rule?",
+        options: [
+            "Monopoly on trade",
+            "Democratic elections",
+            "Indian independence",
+            "Universal education"
+        ],
+        answer: 0
+    },
+    {
+        question: "If the Company had not imposed high taxes, what might have happened?",
+        options: [
+            "Peasants would have been less impoverished",
+            "More British profits",
+            "More famines",
+            "Less agricultural production"
+        ],
+        answer: 0
+    },
+    {
+        question: "What was the effect of British policies on Indian markets?",
+        options: [
+            "Transformed into markets for British goods",
+            "Growth of Indian exports",
+            "Decline in British imports",
+            "Rise of Indian-owned companies"
+        ],
+        answer: 0
+    },
+    {
+        question: "Which of these was a common result of Company economic exploitation?",
+        options: [
+            "Impoverishment of Indian peasants",
+            "Growth of Indian industry",
+            "Rise of Indian banks",
+            "Decline in British exports"
+        ],
+        answer: 0
+    },
+    {
+        question: "What was the fate of Indian landowners who could not pay lagaan?",
+        options: [
+            "Loss of land",
+            "Promotion to Company officials",
+            "Tax exemption",
+            "Increased wealth"
+        ],
+        answer: 0
+    },
+    {
+        question: "If the Company had not been dissolved after 1857, what might have happened?",
+        options: [
+            "Continued Company rule",
+            "Immediate Indian independence",
+            "No British presence in India",
+            "Formation of the United Nations"
+        ],
+        answer: 0
+    },
+    {
+        question: "Which of these was a major British goal in India?",
+        options: [
+            "Economic exploitation",
+            "Indian independence",
+            "Universal education",
+            "Religious harmony"
+        ],
+        answer: 0
+    },
+    {
+        question: "What was the impact of Company rule on Indian agriculture?",
+        options: [
+            "Increased taxation and poverty",
+            "Rapid modernization",
+            "Decline in British exports",
+            "Growth of Indian banks"
+        ],
+        answer: 0
+    },
+    {
+        question: "If the Company had promoted Indian goods, what might have happened?",
+        options: [
+            "Indian industries may have survived",
+            "More British profits",
+            "More famines",
+            "Decline in Indian exports"
+        ],
+        answer: 0
+    },
+    {
+        question: "Which of these was a result of British economic dependency?",
+        options: [
+            "Decline of Indian self-sufficiency",
+            "Growth of Indian exports",
+            "Rise of Indian-owned banks",
+            "Increase in British imports"
+        ],
+        answer: 0
+    },
+    {
+        question: "What was the main reason for Indian indebtedness under Company rule?",
+        options: [
+            "High land revenue demands",
+            "Low taxes",
+            "Government subsidies",
+            "Industrial revolution"
+        ],
+        answer: 0
+    },
+    {
+        question: "If the Company had not imposed fixed revenue demands, what might have changed?",
+        options: [
+            "Peasants would have had more flexibility",
+            "More British profits",
+            "More famines",
+            "Less agricultural production"
+        ],
+        answer: 0
+    },
+    {
+        question: "Which of these was a direct result of British land policies?",
+        options: [
+            "Loss of land by Indian peasants",
+            "Growth of Indian industry",
+            "Decline in British exports",
+            "Rise of Indian-owned companies"
+        ],
+        answer: 0
+    },
+    {
+        question: "What was the effect of Company rule on Indian society?",
+        options: [
+            "Widespread impoverishment",
+            "Universal education",
+            "Rapid industrialization",
+            "Decline in British imports"
+        ],
+        answer: 0
+    },
+    {
+        question: "If the Company had not received a royal charter, what might have happened?",
+        options: [
+            "No English monopoly in India",
+            "More British profits",
+            "More famines",
+            "Decline in Indian exports"
+        ],
+        answer: 0
+    },
+    {
+        question: "Which of these was a common feature of Company taxation?",
+        options: [
+            "High and inflexible demands",
+            "Low taxes",
+            "Tax exemptions for peasants",
+            "Government subsidies"
+        ],
+        answer: 0
+    },
+    {
+        question: "What was the impact of British policies on Indian exports?",
+        options: [
+            "Decline due to focus on raw materials",
+            "Growth of Indian industry",
+            "Increase in British imports",
+            "Rise of Indian-owned companies"
+        ],
+        answer: 0
+    },
+    {
+        question: "If the Company had not promoted British goods, what might have happened to Indian markets?",
+        options: [
+            "They may have remained more self-sufficient",
+            "More British profits",
+            "More famines",
+            "Decline in Indian exports"
+        ],
+        answer: 0
+    },
+    {
+        question: "What was the main legacy of Company rule in India?",
+        options: [
+            "Economic exploitation and dependency",
+            "Rapid industrialization",
+            "Universal education",
+            "Decline in British imports"
+        ],
+        answer: 0
+    },
+    {
+        question: "If the Company had not imposed lagaan, what might have happened to Indian peasants?",
+        options: [
+            "Less indebtedness and poverty",
+            "More British profits",
+            "More famines",
+            "Decline in Indian exports"
+        ],
+        answer: 0
+    },
+    {
+        question: "Which of these was a direct result of British economic policies?",
+        options: [
+            "Destruction of local industries",
+            "Growth of Indian banks",
+            "Increase in British imports",
+            "Rise of Indian-owned companies"
+        ],
+        answer: 0
+    },
+    {
+        question: "What was the effect of Company rule on Indian crafts?",
+        options: [
+            "Decline due to British imports",
+            "Growth due to new technology",
+            "No change",
+            "Crafts became a British monopoly"
+        ],
+        answer: 0
+    },
+    {
+        question: "If the Company had not promoted British goods, what might have happened to Indian exports?",
+        options: [
+            "They may have remained competitive",
+            "More British profits",
+            "More famines",
+            "Decline in Indian exports"
+        ],
+        answer: 0
+    },
+    {
+        question: "What was the impact of Company rule on Indian peasants?",
+        options: [
+            "Increased poverty and indebtedness",
+            "Growth of Indian industry",
+            "Decline in British exports",
+            "Rise of Indian-owned companies"
+        ],
+        answer: 0
+    }
+];
+    </script>
+    <script>
+// --- Timer Logic ---
+function startTimer() {
+    clearInterval(timerInterval);
+    timeLeft = totalSeconds;
+    updateTimerDisplay();
+    timerInterval = setInterval(() => {
+        if (timeLeft > 0) {
+            timeLeft--;
+            updateTimerDisplay();
+        } else {
+            clearInterval(timerInterval);
+            document.getElementById('quiz-module').innerHTML = `<div style="font-size:1.2em; font-weight:bold; color:#d32f2f;">Time's up!<br>Your final score: ${quizScore} / 55</div>`;
+            document.getElementById('leaderboard-form').style.display = 'block';
+
+            // Auto-submit score if user enters their name, including time left (which is 0 here)
+            document.getElementById('leaderboard-form').onsubmit = function(e) {
+                e.preventDefault();
+                const name = document.getElementById('leaderboard-name').value.trim();
+                if (!name) return;
+                const lb = getLeaderboard();
+                lb.push({ name, score: quizScore, timeLeft: 0 });
+                localStorage.setItem('lagaanLeaderboard', JSON.stringify(lb));
+                renderLeaderboard();
+                document.getElementById('leaderboard-form').style.display = 'none';
+                document.getElementById('leaderboard-name').value = '';
+            };
+        }
+    }, 1000);
+}
+
+// --- Quiz Completion (when all questions are answered) ---
+function loadQuizQuestion() {
+    const q = quizData[quizIndex];
+    if (!q) {
+        // Quiz complete
+        document.getElementById('quiz-question').textContent = '';
+        document.getElementById('quiz-options').innerHTML = '';
+        document.getElementById('quiz-feedback').textContent = '';
+        document.getElementById('quiz-score').textContent = `Final Score: ${quizScore} / 55`;
+        document.getElementById('quiz-next').style.display = 'none';
+        document.getElementById('leaderboard-form').style.display = 'block';
+
+        // Auto-submit score if user enters their name, including time left
+        document.getElementById('leaderboard-form').onsubmit = function(e) {
+            e.preventDefault();
+            const name = document.getElementById('leaderboard-name').value.trim();
+            if (!name) return;
+            const lb = getLeaderboard();
+            lb.push({ name, score: quizScore, timeLeft: timeLeft });
+            localStorage.setItem('lagaanLeaderboard', JSON.stringify(lb));
+            renderLeaderboard();
+            document.getElementById('leaderboard-form').style.display = 'none';
+            document.getElementById('leaderboard-name').value = '';
+        };
+        return;
+    }
+    document.getElementById('quiz-question').textContent = q.question;
+    document.getElementById('quiz-feedback').textContent = '';
+    document.getElementById('quiz-score').textContent = `Score: ${quizScore} / 55`;
+    document.getElementById('quiz-next').style.display = 'none';
+    document.getElementById('leaderboard-form').style.display = 'none';
+
+    // Render options
+    let html = '';
+    q.options.forEach((opt, i) => {
+        html += `<button class="quiz-option-btn" data-idx="${i}" style="margin:4px 0; padding:8px 16px; border-radius:4px; border:1px solid #ccc; background:#f5f5f5; cursor:pointer; width:100%; text-align:left;">${opt}</button>`;
+    });
+    document.getElementById('quiz-options').innerHTML = html;
+
+    // Add event listeners
+    document.querySelectorAll('.quiz-option-btn').forEach(btn => {
+        btn.onclick = function() {
+            checkQuizAnswer(parseInt(this.getAttribute('data-idx')));
+        };
+    });
+}
+
+function checkQuizAnswer(selected) {
+    const q = quizData[quizIndex];
+    if (selected === q.answer) {
+        document.getElementById('quiz-feedback').textContent = 'Correct!';
+        quizScore++;
+    } else {
+        document.getElementById('quiz-feedback').textContent = `Incorrect. Correct answer: ${q.options[q.answer]}`;
+    }
+    document.getElementById('quiz-score').textContent = `Score: ${quizScore} / 55`;
+    document.getElementById('quiz-next').style.display = 'inline-block';
+    // Disable all option buttons
+    document.querySelectorAll('.quiz-option-btn').forEach(btn => btn.disabled = true);
+}
+
+// In leaderboard logic, store and display score
+function getLeaderboard() {
+    return JSON.parse(localStorage.getItem('lagaanLeaderboard') || '[]');
+}
+function renderLeaderboard() {
+    const lb = getLeaderboard();
+    lb.sort((a, b) => b.score - a.score || b.timeLeft - a.timeLeft);
+    const ul = document.getElementById('leaderboard-list');
+    ul.innerHTML = '';
+    lb.slice(0, 10).forEach(entry => {
+        // Format time left as mm:ss
+        let timeDisplay = '';
+        if (typeof entry.timeLeft === 'number') {
+            const min = Math.floor(entry.timeLeft / 60).toString().padStart(2, '0');
+            const sec = (entry.timeLeft % 60).toString().padStart(2, '0');
+            timeDisplay = ` (${min}:${sec} left)`;
+        }
+        ul.innerHTML += `<li>${entry.name}: ${entry.score} / 55${timeDisplay}</li>`;
+    });
+    if (lb.length === 0) {
+        ul.innerHTML = '<li style="color:#888;">No scores yet. Be the first!</li>';
+    }
+}
+
+// Leaderboard form submit (store score)
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('leaderboard-form').onsubmit = function(e) {
+        e.preventDefault();
+        const name = document.getElementById('leaderboard-name').value.trim();
+        if (!name) return;
+        const lb = getLeaderboard();
+        lb.push({ name, score: quizScore });
+        localStorage.setItem('lagaanLeaderboard', JSON.stringify(lb));
+        renderLeaderboard();
+        document.getElementById('leaderboard-form').style.display = 'none';
+        document.getElementById('leaderboard-name').value = '';
+    };
+});
+
+document.addEventListener('DOMContentLoaded', function() {
+    document.getElementById('quiz-next').onclick = function() {
+        quizIndex++;
+        loadQuizQuestion();
+    };
+});
+
+// In reset logic, reset quizScore
+document.getElementById('reset-timer-btn').onclick = function() {
+    startTimer();
+    quizIndex = 0;
+    quizScore = 0;
+    loadQuizQuestion();
+    renderLeaderboard();
+};
+
+// In quiz start logic, reset quizScore
+document.getElementById('quiz-overlay-start-btn').onclick = function() {
+    document.getElementById('quiz-start-overlay').style.display = 'none';
+    document.getElementById('quiz-timer-container').style.display = 'flex';
+    document.getElementById('quiz-module').style.display = 'block';
+    document.getElementById('leaderboard-section').style.display = 'block';
+    document.querySelectorAll('.section').forEach(section => {
+        if (!section.querySelector('#quiz-module')) {
+            section.style.display = 'none';
+        }
+    });
+    document.getElementById('start-quiz-btn').style.display = 'none';
+    startTimer();
+    quizIndex = 0;
+    quizScore = 0;
+    loadQuizQuestion();
+    renderLeaderboard();
+};
+</script>
+    <!-- Add this function to clear the leaderboard -->
+    <script>
+    function resetLeaderboard() {
+    localStorage.removeItem('lagaanLeaderboard');
+    renderLeaderboard();
+}
+
+// Optionally, call this once to clear the leaderboard immediately:
+resetLeaderboard();
+    </script>
+    <script>
+window.addEventListener('DOMContentLoaded', function() {
+    // Hide timer, quiz, leaderboard, and overlay on load
+    document.getElementById('quiz-timer-container').style.display = 'none';
+    document.getElementById('quiz-start-overlay').style.display = 'none';
+    document.getElementById('quiz-module').style.display = 'none';
+    document.getElementById('leaderboard-section').style.display = 'none';
+    document.getElementById('start-quiz-btn').style.display = 'inline-block';
+
+    // Show overlay when Start Quiz button is clicked
+    document.getElementById('start-quiz-btn').onclick = function() {
+        document.getElementById('quiz-start-overlay').style.display = 'flex';
+    };
+
+    // Close overlay
+    document.getElementById('quiz-overlay-close-btn').onclick = function() {
+        document.getElementById('quiz-start-overlay').style.display = 'none';
+    };
+
+    // Begin quiz
+    document.getElementById('quiz-overlay-start-btn').onclick = function() {
+        document.getElementById('quiz-start-overlay').style.display = 'none';
+        document.getElementById('quiz-timer-container').style.display = 'flex';
+        document.getElementById('quiz-module').style.display = 'block';
+        document.getElementById('leaderboard-section').style.display = 'block';
+        document.querySelectorAll('.section').forEach(section => {
+            if (!section.querySelector('#quiz-module')) {
+                section.style.display = 'none';
+            }
+        });
+        document.getElementById('start-quiz-btn').style.display = 'none';
+        startTimer();
+        quizIndex = 0;
+        quizScore = 0;
+        loadQuizQuestion();
+        renderLeaderboard();
+    };
+
+    // Reset timer, questions, and score
+    document.getElementById('reset-timer-btn').onclick = function() {
+        startTimer();
+        quizIndex = 0;
+        loadQuizQuestion();
+        renderLeaderboard();
+    };
+});
+</script>
+<!-- Add this script before </body> to enable fullscreen image viewing -->
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    document.querySelectorAll('.image-block img').forEach(function(img) {
+        img.style.cursor = 'zoom-in';
+        img.addEventListener('click', function(e) {
+            // Create overlay
+            const overlay = document.createElement('div');
+            overlay.className = 'fullscreen-img-overlay';
+            overlay.innerHTML = `<img src="${img.src}" alt="${img.alt}">`;
+            document.body.appendChild(overlay);
+            // Clicking anywhere closes fullscreen
+            overlay.onclick = function() {
+                overlay.remove();
+            };
+        });
+    });
+});
+</script>
+
+<!-- Add this just before the closing </body> tag, after all other sections -->
+
+<div class="section" id="comments-section">
+    <h2 class="section-title">Comments</h2>
+    <form id="comment-form" style="margin-bottom:16px;">
+        <textarea id="comment-input" rows="3" style="width:100%; max-width:600px; border-radius:6px; border:1px solid #ccc; padding:8px;" placeholder="Write your comment here..."></textarea>
+        <br>
+        <button type="submit" style="margin-top:8px; padding:8px 16px; border-radius:4px; border:none; background:#1976d2; color:#fff; cursor:pointer;">Add Comment</button>
+    </form>
+    <ul id="comments-list" style="padding-left:18px; background:#f5f5f5; border-radius:6px; min-height:40px;"></ul>
+</div>
+
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+    // Load comments from localStorage
+    function loadComments() {
+        const comments = JSON.parse(localStorage.getItem('lagaanComments') || '[]');
+        const ul = document.getElementById('comments-list');
+        ul.innerHTML = '';
+        comments.forEach(comment => {
+            const li = document.createElement('li');
+            li.textContent = comment;
+            ul.appendChild(li);
+        });
+        if (comments.length === 0) {
+            ul.innerHTML = '<li style="color:#888;">No comments yet. Be the first!</li>';
+        }
+    }
+
+    // Instantly post comment on input or button (if name is set)
+    document.getElementById('comment-form').onsubmit = function(e) {
+        e.preventDefault();
+        const userName = localStorage.getItem('lagaanUserName') || '';
+        if (!userName) {
+            alert('Please enter your name at the top to comment.');
+            return false;
+        }
+        const input = document.getElementById('comment-input');
+        const text = input.value.trim();
+        if (!text) return;
+        const comments = JSON.parse(localStorage.getItem('lagaanComments') || '[]');
+        comments.push(`${userName}: ${text}`);
+        localStorage.setItem('lagaanComments', JSON.stringify(comments));
+        input.value = '';
+        loadComments(); // Instantly update the comment list
+    };
+
+    // Also post instantly on pressing Enter (without Shift) in the textarea
+    document.getElementById('comment-input').addEventListener('keydown', function(e) {
+        if (e.key === 'Enter' && !e.shiftKey) {
+            e.preventDefault();
+            document.getElementById('comment-form').requestSubmit();
+        }
+    });
+
+    loadComments();
+});
+</script>
+<!-- Move the name input to the top of the website, lock quiz & comments if no name, and clear comments function -->
+<script>
+function lockSections(lock) {
+    // Lock/unlock quiz
+    document.getElementById('start-quiz-btn').disabled = lock;
+    document.getElementById('start-quiz-btn').style.opacity = lock ? '0.5' : '1';
+    // Lock/unlock comment form
+    document.getElementById('comment-input').disabled = lock;
+    document.querySelector('#comment-form button[type="submit"]').disabled = lock;
+    document.querySelector('#comment-form button[type="submit"]').style.opacity = lock ? '0.5' : '1';
+    // Optionally, visually indicate locked state
+    document.getElementById('comments-section').style.opacity = lock ? '0.6' : '1';
+    document.getElementById('comments-section').style.pointerEvents = lock ? 'none' : 'auto';
+    // Quiz overlay lock (optional)
+    if (lock) {
+        document.getElementById('quiz-module').style.opacity = '0.6';
+        document.getElementById('quiz-module').style.pointerEvents = 'none';
+        document.getElementById('leaderboard-section').style.opacity = '0.6';
+        document.getElementById('leaderboard-section').style.pointerEvents = 'none';
+    } else {
+        document.getElementById('quiz-module').style.opacity = '1';
+        document.getElementById('quiz-module').style.pointerEvents = 'auto';
+        document.getElementById('leaderboard-section').style.opacity = '1';
+        document.getElementById('leaderboard-section').style.pointerEvents = 'auto';
+    }
+}
+
+function setUserName(name) {
+    localStorage.setItem('lagaanUserName', name);
+    document.getElementById('user-name-display').textContent = name ? `Welcome, ${name}!` : '';
+    document.getElementById('user-name-display').style.display = name ? 'inline' : 'none';
+    document.getElementById('global-user-name').value = '';
+    document.getElementById('set-user-name-btn').disabled = !!name; // Lock the set name button
+    document.getElementById('set-user-name-btn').style.opacity = name ? '0.5' : '1';
+    lockSections(!name);
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    // Move leaderboard name input out of quiz area
+    document.getElementById('leaderboard-form').style.display = 'none';
+
+    // Set up name bar
+    const savedName = localStorage.getItem('lagaanUserName') || '';
+    if (savedName) {
+        setUserName(savedName);
+    } else {
+        lockSections(true);
+    }
+    document.getElementById('set-user-name-btn').onclick = function() {
+        const name = document.getElementById('global-user-name').value.trim();
+        if (name) setUserName(name);
+    };
+    document.getElementById('global-user-name').addEventListener('keydown', function(e) {
+        if (e.key === 'Enter') {
+            e.preventDefault();
+            document.getElementById('set-user-name-btn').click();
+        }
+    });
+
+    // Prevent quiz start if locked
+    document.getElementById('start-quiz-btn').onclick = function(e) {
+        if (document.getElementById('start-quiz-btn').disabled) {
+            alert('Please enter your name at the top to participate.');
+            return false;
+        }
+    };
+});
+</script>
+
+<script>
+function clearComments() {
+    localStorage.removeItem('lagaanComments');
+    // Optionally, clear the comments list in the UI immediately
+    const ul = document.getElementById('comments-list');
+    if (ul) {
+        ul.innerHTML = '<li style="color:#888;">No comments yet. Be the first!</li>';
+    }
+}
+
+// Call this function once to clear all comments:
+clearComments();
+</script>
+</body>
+</html>
